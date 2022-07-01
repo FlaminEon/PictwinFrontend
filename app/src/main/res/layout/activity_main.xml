@@ -42,7 +42,7 @@
             app:subtitle="@string/app_name"
             app:title="@string/app_name">
         <!-- -
-        <TODO: fix app:subtitle and app:title parameters
+        <TODO: fix app:subtitle and app:title parameters.
         <!- -->
 
         </com.google.android.material.appbar.MaterialToolbar>

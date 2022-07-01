@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
 }
-// TODO: find out why Line 5 is throwing an exception, then drink bleach
+// TODO: find out why Line 5 is throwing an exception, then drink bleach.
 android {
     compileSdk 32
     buildToolsVersion '32.0.0'
