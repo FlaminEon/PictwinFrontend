@@ -27,7 +27,7 @@ android {
             versionNameSuffix ".r"
         }
         // Development
-        release {
+        debug {
             debuggeable true
             minifyEnabled false
             shrinkResources false
@@ -43,9 +43,9 @@ android {
     }
 
     android.applicationVariants.all { variant ->
-        variant.outputs.each { output->
+        variant.outputs.each { output ->
             output.versionCodeOverride = project.ext.buildTimestamp
-            outpur.versionNameOverride = project.ext.buildVersion + (variant.name = "debug" ? ".d" : ".r")
+            output.versionNameOverride = project.ext.buildVersion + (variant.name = "debug" ? ".d" : ".r")
         }
     }
 }
