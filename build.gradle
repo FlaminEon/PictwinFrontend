@@ -7,3 +7,35 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+// Build the entire project in a temporal directory
+allprojects {
+    def YEAR_WEEK   = new Date().format("yyww").toInteger()
+    def DAY         = new Date().format("u").toInteger()
+    def HOUR_MINUTE = new Date().format("HHmm").toInteger()
+
+    // The Timestamp
+    def BUILD_TIMESTAMP = 100000 * YEAR_WEEK + 10000 * DAY + HOUR_MINUTE
+
+    /*
+    Sematic Versioning:
+        1: Neptune
+        2: Saturn
+        3: Venus
+        4: Mercury
+     */
+    def MAJOR = 1
+    def MINOR = 0
+    def PATCH = BUILD_TIMESTAMP
+
+    // Selected version name
+    def BUIlD_VERSION = "Neptune-${MAJOR}.${MINOR}.${PATCH}"
+
+    // Set values to the entire project
+    ext.buildTimestamp = BUILD_TIMESTAMP
+    ext.buildVersion = BUIlD_VERSION
+    logger.lifecycle("Version to use: <${BUIlD_VERSION}.")
+
+    // Use the temporal directory to build (optional)
+    buildDir = "${System.env.TEMP}\\gradle\\${project.name}"
+}
