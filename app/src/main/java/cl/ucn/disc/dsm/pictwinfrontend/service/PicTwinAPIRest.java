@@ -18,6 +18,9 @@
 package cl.ucn.disc.dsm.pictwinfrontend.service;
 
 import cl.ucn.disc.dsm.pictwinfrontend.model.User;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * The REST API of PicTwin

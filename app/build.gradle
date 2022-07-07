@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
 }
-// TODO: find out why Line 5 is throwing an exception, then drink bleach.
+
 android {
     compileSdk 32
     buildToolsVersion '32.0.0'
@@ -19,7 +19,7 @@ android {
     buildTypes {
         // Production
         release {
-            debuggeable false
+            debuggable false
             minifyEnabled true
             shrinkResources true
             zipAlignEnabled true
@@ -28,7 +28,7 @@ android {
         }
         // Development
         debug {
-            debuggeable true
+            debuggable true
             minifyEnabled false
             shrinkResources false
             zipAlignEnabled false
@@ -45,7 +45,7 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.each { output ->
             output.versionCodeOverride = project.ext.buildTimestamp
-            output.versionNameOverride = project.ext.buildVersion + (variant.name = "debug" ? ".d" : ".r")
+            output.versionNameOverride = project.ext.buildVersion + (variant.name == "debug" ? ".d" : ".r")
         }
     }
 }
@@ -58,7 +58,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     // LeakCanary
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.0'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
 
     // Google GSON
     implementation 'com.google.code.gson:gson:2.9.0'
