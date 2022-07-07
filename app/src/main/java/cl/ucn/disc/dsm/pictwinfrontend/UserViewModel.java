@@ -25,9 +25,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import cl.ucn.disc.dsm.pictwinfrontend.Model.Pic;
-import cl.ucn.disc.dsm.pictwinfrontend.Model.Twin;
-import cl.ucn.disc.dsm.pictwinfrontend.Model.User;
+import cl.ucn.disc.dsm.pictwinfrontend.model.Pic;
+import cl.ucn.disc.dsm.pictwinfrontend.model.Twin;
+import cl.ucn.disc.dsm.pictwinfrontend.model.User;
 
 /**
  * The ViewModel of User.

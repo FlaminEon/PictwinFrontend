@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package cl.ucn.disc.dsm.pictwinfrontend.Model;
+package cl.ucn.disc.dsm.pictwinfrontend.model;
 
-public class User {
-    // TODO: Implement User class contents.
+public class Pic {
+    // TODO: Implement Pic class contents.
 }

@@ -15,8 +15,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package cl.ucn.disc.dsm.pictwinfrontend.Model;
+package cl.ucn.disc.dsm.pictwinfrontend.service;
 
-public class Pic {
-    // TODO: Implement Pic class contents.
+import cl.ucn.disc.dsm.pictwinfrontend.model.User;
+
+/**
+ * The REST API of PicTwin
+ *
+ * @author Cross
+ */
+public interface PicTwinAPIRest {
+
+    /**
+     * Retrieve the user.
+     *
+     * @param email to use.
+     * @param password to use.
+     * @return the user.
+     */
+    @GET("/users")
+    Call<User> retrieveUser(@Query("email") String email, @Query(value = "password") String password);
 }

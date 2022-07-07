@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package cl.ucn.disc.dsm.pictwinfrontend.Model;
+package cl.ucn.disc.dsm.pictwinfrontend.model;
 
-public class Twin {
-    // TODO: Implement Twin class contents.
+public class User {
+    // TODO: Implement User class contents.
 }

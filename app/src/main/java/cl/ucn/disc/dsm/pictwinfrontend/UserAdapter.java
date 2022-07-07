@@ -25,8 +25,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import cl.ucn.disc.dsm.pictwinfrontend.Model.Twin;
-import cl.ucn.disc.dsm.pictwinfrontend.Model.User;
+import cl.ucn.disc.dsm.pictwinfrontend.model.Twin;
+import cl.ucn.disc.dsm.pictwinfrontend.model.User;
 
 /**
  * The adapter
