@@ -17,12 +17,13 @@
 
 package cl.ucn.disc.dsm.pictwinfrontend.service;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import cl.ucn.disc.dsm.pictwinfrontend.model.User;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -51,10 +52,10 @@ public final class UserRepository {
     /**
      * Constructor.
      */
-    public UserRepository(){
+    public UserRepository() {
 
         // TODO: Check log function.
-        log.debug("Building UserRepository with URL: {}", BASE_URL);
+        log("Building UserRepository with URL: {}", BASE_URL);
 
         // Optional: the logger.
         HttpLoggingInterceptor theLogging = new HttpLoggingInterceptor(log::debug);
@@ -87,7 +88,6 @@ public final class UserRepository {
      * @param password to use.
      * @return the user.
      */
-    @SneakyThrows
     public Optional<User> retrieveUser(final String email, final String password){
 
         // The call.

@@ -25,16 +25,34 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import java.util.Optional;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 import cl.ucn.disc.dsm.pictwinfrontend.model.Pic;
 import cl.ucn.disc.dsm.pictwinfrontend.model.Twin;
 import cl.ucn.disc.dsm.pictwinfrontend.model.User;
+import cl.ucn.disc.dsm.pictwinfrontend.service.UserRepository;
 
 /**
  * The ViewModel of User.
+ *
+ * @author Cross.
  */
 public class UserViewModel extends AndroidViewModel {
+
     /**
-     * The User
+     * The executor with two threads.
+     */
+    private static final Executor EXECUTOR = Executors.newFixedThreadPool(2);
+
+    /**
+     * The Repository.
+     */
+    private final UserRepository userRepository = new UserRepository();
+
+    /**
+     * The container of User.
      */
     private final MutableLiveData<User> userLiveData = new MutableLiveData<>();
 
@@ -48,47 +66,29 @@ public class UserViewModel extends AndroidViewModel {
     }
 
     /**
-     * Return the UserLiveData.
+     * Return the LiveData of User.
      */
-    public LiveData<User> getUserLiveData(){
-        return this.userLiveData;
+    public void Update(){
+
+        // Only load if there isn't any data
+        if (this.userLiveData.getValue() == null){
+            this.retrieveUserFromNetworkInBackground();
+        }
     }
 
     /**
-     * refresh or get the data.
+     * Retrieve User from REST API in background.
      */
-    public void update(){
+    private void retrieveUserFromNetworkInBackground(){
 
-        // running on background
-        AsyncTask.execute(() -> {
-                // TODO: Get data from the internet
-            User user = new User(1L, "admin@ucn.cl", "admin123");
+        // Run in background
+        EXECUTOR.execute(() ->{
 
-            for (long i = 0; i <= 600; i+=2){
-                user.getTwins().add(buildTwin(i));
-            }
+            // Get the User from repository.
+            Optional<User> oUser = this.userRepository.retrieveUser("admin@ucn.cl", "admin123");
 
-            this.userLiveData.postValue(user);
-
+            // Only set the user if it exists.
+            oUser.ifPresent(this.userLiveData::postValue);
         });
     }
-
-    /**
-     * Test to populate the Twins.
-     */
-    private static Twin buildTwin(long n){
-        Pic my = new Pic();
-        my.setId(n);
-
-        Pic your = new Pic();
-        your.setId(n + 1);
-
-        Twin twin = new Twin();
-        twin.setId(n);
-        twin.setMy(my);
-        twin.setYours(your);
-
-        return twin;
-    }
-
 }
