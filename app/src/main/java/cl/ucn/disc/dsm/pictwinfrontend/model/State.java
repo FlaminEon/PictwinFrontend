@@ -17,52 +17,12 @@
 
 package cl.ucn.disc.dsm.pictwinfrontend.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 /**
- * The Twin created from two Pics.
+ * The State Enum,
  *
  * @author Cross.
  */
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class Twin {
-
-    /**
-     * The ID.
-     */
-    @Getter
-    private Long id;
-
-    /**
-     * The dislike indicator.
-     */
-    @Getter
-    @Setter
-    @Builder.Default
-    private Boolean dislike = Boolean.FALSE;
-
-    /**
-     * Pic tagged as "my"
-     */
-    @Getter
-    private Pic my;
-
-    /**
-     * Pic tagged as "yours"
-     */
-    @Getter
-    private Pic yours;
-
-    /**
-     * The owner of the twin.
-     */
-    @Getter
-    private User owner;
-
+public enum State {
+    ACTIVE,
+    BANNED
 }

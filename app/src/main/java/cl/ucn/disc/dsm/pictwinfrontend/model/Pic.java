@@ -17,6 +17,105 @@
 
 package cl.ucn.disc.dsm.pictwinfrontend.model;
 
+import java.time.ZonedDateTime;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/**
+ * The Pic class
+ *
+ * @author Cross.
+ */
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pic {
-    // TODO: Implement Pic class contents.
+
+    /**
+     * The ID of the Pic.
+     */
+    @Getter
+    private Long id;
+
+    /**
+     * The timestamp.
+     */
+    @Getter
+    @Builder.Default
+    private ZonedDateTime timestamp = ZonedDateTime.now();
+
+    /**
+     * the amount of dislike a Pic has.
+     */
+    @Getter
+    @Builder.Default
+    private Integer dislikes = 0;
+
+    /**
+     * The geographical latitude of the Pic.
+     */
+    @Getter
+    private Double latitude;
+
+    /**
+     * The geographical longitude of the Pic.
+     */
+    @Getter
+    private Double longitude;
+
+    /**
+     * The GPS' error.
+     */
+    @Getter
+    private Double error;
+
+    /**
+     * The amount of views a Pic has.
+     */
+    @Getter
+    @Builder.Default
+    private Integer views = 0;
+
+    /**
+     * The name of the Pic.
+     */
+    @Getter
+    private String name;
+
+    /**
+     * The stored picture in Bytes
+     */
+    @Getter
+    private Byte[] picture;
+
+    /**
+     * The owner of the Pic
+     */
+    @Getter
+    @Setter
+    private User owner;
+
+    /**
+     * Increment the amount of dislikes
+     *
+     * @return the amount of dislikes
+     */
+    public Integer incrementDislikes(){
+        this.dislikes++;
+            return this.dislikes;
+    }
+
+    /**
+     * Increment the amount of views
+     *
+     * @return the amount of views.
+     */
+    public Integer incrementViews(){
+        this.views++;
+        return this.views;
+    }
 }

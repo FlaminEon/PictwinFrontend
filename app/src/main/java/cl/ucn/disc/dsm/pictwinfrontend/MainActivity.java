@@ -85,6 +85,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         // Load data from the backend
-        userViewModel.update();
+        userViewModel.Update();
     }
 }

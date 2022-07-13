@@ -33,6 +33,7 @@ import cl.ucn.disc.dsm.pictwinfrontend.model.Pic;
 import cl.ucn.disc.dsm.pictwinfrontend.model.Twin;
 import cl.ucn.disc.dsm.pictwinfrontend.model.User;
 import cl.ucn.disc.dsm.pictwinfrontend.service.UserRepository;
+import lombok.Getter;
 
 /**
  * The ViewModel of User.
@@ -54,6 +55,8 @@ public class UserViewModel extends AndroidViewModel {
     /**
      * The container of User.
      */
+    // TODO: check Getter
+    @Getter
     private final MutableLiveData<User> userLiveData = new MutableLiveData<>();
 
     /**

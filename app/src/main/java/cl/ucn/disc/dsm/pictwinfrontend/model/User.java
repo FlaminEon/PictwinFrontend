@@ -17,6 +17,84 @@
 
 package cl.ucn.disc.dsm.pictwinfrontend.model;
 
-public class User {
-    // TODO: Implement User class contents.
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.Setter;
+
+/**
+ * The User of the application.
+ *
+ * @author Cross
+ */
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public final class User {
+
+    /**
+     * The ID.
+     */
+    @Getter
+    private Long id;
+
+    /**
+     * The user's email.
+     */
+    @Getter
+    @NonNull
+    private String email;
+
+    /**
+     * The user's amount of strikes
+     */
+    @Getter
+    private Integer strikes;
+
+    /**
+     * The user's hashed password
+     */
+    @Getter
+    @Setter
+    private String password;
+
+    /**
+     * The Twins
+     */
+    // TODO: check Getter
+    @Builder.Default
+    @Getter
+    private List<Twin> twins = new ArrayList<>();
+
+    /**
+     * The State.
+     */
+    @Builder.Default
+    @Getter
+    @Setter
+    private State state = State.ACTIVE;
+
+    /**
+     * Increment the amount of strikes.
+     *
+     * @return the number of strikes.
+     */
+    public Integer incrementStrikes(){
+        this.strikes++;
+        return this.strikes;
+    }
+
+    /**
+     * Insert a twin into the List.
+     *
+     * @param twin to add.
+     */
+    public void add(final Twin twin){
+        this.twins.add(twin);
+    }
 }
