@@ -17,13 +17,12 @@
 
 package cl.ucn.disc.dsm.pictwinfrontend;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 
 /**
  * The Main Activity.
@@ -48,31 +47,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Get the Recycler View from the layout
+        // Get the Recycler View from the layout.
         RecyclerView recyclerView = findViewById(R.id.am_rv_twins);
 
-        // The Layout of the Recycler View
+        // The Layout of the Recycler View.
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
-        // Build the adapter
+        // Build the adapter.
         UserAdapter adapter = new UserAdapter();
 
-        // Set the adapter to RecyclerView
+        // Set the adapter to RecyclerView.
         recyclerView.setAdapter(adapter);
 
-        // Build the UserViewModel
+        // Build the UserViewModel.
         this.userViewModel = ViewModelProvider
                 .AndroidViewModelFactory
                 .getInstance(super.getApplication())
                 .create(UserViewModel.class);
 
-        // Watch the view model
+        // Watch the view model.
         userViewModel.getUserLiveData().observe(this, user -> {
 
-            // Update the adapter
+            // Update the adapter.
             adapter.setUser(user);
 
-            // Refresh the GUI
+            // Refresh the GUI.
             adapter.notifyDataSetChanged();
         });
 
@@ -82,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
      * Show the app.
      */
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        // Load data from the backend
+        // Load data from the backend.
         userViewModel.Update();
     }
 }
