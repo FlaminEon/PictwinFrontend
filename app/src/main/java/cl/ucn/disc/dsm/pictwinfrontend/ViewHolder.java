@@ -22,7 +22,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * The View Holder
+ * The View Holder.
  */
 public class ViewHolder extends RecyclerView.ViewHolder {
     //TODO: change class to static.
@@ -30,7 +30,12 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     protected TextView yours;
 
-    public ViewHolder(View view){
+    /**
+     * Shows both Twins.
+     *
+     * @param view a view.
+     */
+    public ViewHolder(View view) {
         super(view);
         this.mine = view.findViewById(R.id.rt_tv_mine);
         this.yours = view.findViewById(R.id.rt_tv_yours);
