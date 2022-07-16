@@ -80,10 +80,11 @@ public class UserViewModel extends AndroidViewModel {
         EXECUTOR.execute(() -> {
 
             // Get the User from repository.
-            Optional<User> oUser = this.userRepository.retrieveUser("admin@ucn.cl", "admin123");
+            Optional<User> optionalUser = this.userRepository.retrieveUser("admin@ucn.cl",
+                                                                           "admin123");
 
             // Only set the user if it exists.
-            oUser.ifPresent(this.userLiveData::postValue);
+            optionalUser.ifPresent(this.userLiveData::postValue);
         });
     }
 }
