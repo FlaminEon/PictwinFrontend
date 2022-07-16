@@ -23,9 +23,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * The REST API of PicTwin
+ * The REST API of PicTwin.
  *
- * @author Cross
+ * @author Cross.
  */
 public interface PicTwinAPIRest {
 
@@ -37,5 +37,6 @@ public interface PicTwinAPIRest {
      * @return the user.
      */
     @GET("/users")
-    Call<User> retrieveUser(@Query("email") String email, @Query(value = "password") String password);
+    Call<User> retrieveUser(@Query("email") String email,
+                            @Query(value = "password") String password);
 }
