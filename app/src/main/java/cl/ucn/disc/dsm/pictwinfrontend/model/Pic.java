@@ -18,7 +18,6 @@
 package cl.ucn.disc.dsm.pictwinfrontend.model;
 
 import java.time.ZonedDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,7 +25,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Pic class
+ * The Pic class.
  *
  * @author Cross.
  */
@@ -87,34 +86,34 @@ public class Pic {
     private String name;
 
     /**
-     * The stored picture in Bytes
+     * The stored picture in Bytes.
      */
     @Getter
     private Byte[] picture;
 
     /**
-     * The owner of the Pic
+     * The owner of the Pic.
      */
     @Getter
     @Setter
     private User owner;
 
     /**
-     * Increment the amount of dislikes
+     * Increment the amount of dislikes.
      *
-     * @return the amount of dislikes
+     * @return the amount of dislikes.
      */
-    public Integer incrementDislikes(){
+    public Integer incrementDislikes() {
         this.dislikes++;
             return this.dislikes;
     }
 
     /**
-     * Increment the amount of views
+     * Increment the amount of views.
      *
      * @return the amount of views.
      */
-    public Integer incrementViews(){
+    public Integer incrementViews() {
         this.views++;
         return this.views;
     }
