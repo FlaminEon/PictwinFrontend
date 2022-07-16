@@ -19,7 +19,6 @@ package cl.ucn.disc.dsm.pictwinfrontend.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -51,22 +50,21 @@ public final class User {
     private String email;
 
     /**
-     * The user's amount of strikes
+     * The user's amount of strikes.
      */
     @Getter
     private Integer strikes;
 
     /**
-     * The user's hashed password
+     * The user's hashed password.
      */
     @Getter
     @Setter
     private String password;
 
     /**
-     * The Twins
+     * The Twins.
      */
-    // TODO: check Getter
     @Builder.Default
     @Getter
     private List<Twin> twins = new ArrayList<>();
@@ -84,7 +82,7 @@ public final class User {
      *
      * @return the number of strikes.
      */
-    public Integer incrementStrikes(){
+    public Integer incrementStrikes() {
         this.strikes++;
         return this.strikes;
     }
@@ -94,7 +92,7 @@ public final class User {
      *
      * @param twin to add.
      */
-    public void add(final Twin twin){
+    public void add(final Twin twin) {
         this.twins.add(twin);
     }
 }
