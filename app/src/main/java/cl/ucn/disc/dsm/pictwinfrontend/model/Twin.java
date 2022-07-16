@@ -48,13 +48,13 @@ public class Twin {
     private Boolean dislike = Boolean.FALSE;
 
     /**
-     * Pic tagged as "my"
+     * Pic tagged as "my".
      */
     @Getter
     private Pic my;
 
     /**
-     * Pic tagged as "yours"
+     * Pic tagged as "yours".
      */
     @Getter
     private Pic yours;
