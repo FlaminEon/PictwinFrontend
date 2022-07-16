@@ -18,21 +18,14 @@
 package cl.ucn.disc.dsm.pictwinfrontend;
 
 import android.app.Application;
-import android.os.AsyncTask;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
+import cl.ucn.disc.dsm.pictwinfrontend.model.User;
+import cl.ucn.disc.dsm.pictwinfrontend.service.UserRepository;
 import java.util.Optional;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
-import cl.ucn.disc.dsm.pictwinfrontend.model.Pic;
-import cl.ucn.disc.dsm.pictwinfrontend.model.Twin;
-import cl.ucn.disc.dsm.pictwinfrontend.model.User;
-import cl.ucn.disc.dsm.pictwinfrontend.service.UserRepository;
 import lombok.Getter;
 
 /**
@@ -55,26 +48,25 @@ public class UserViewModel extends AndroidViewModel {
     /**
      * The container of User.
      */
-    // TODO: check Getter
     @Getter
     private final MutableLiveData<User> userLiveData = new MutableLiveData<>();
 
     /**
-     * The Constructor
+     * The Constructor.
      *
      * @param application to use.
      */
-    public UserViewModel(@NonNull Application application){
+    public UserViewModel(@NonNull Application application) {
         super(application);
     }
 
     /**
      * Return the LiveData of User.
      */
-    public void Update(){
+    public void Update() {
 
         // Only load if there isn't any data
-        if (this.userLiveData.getValue() == null){
+        if (this.userLiveData.getValue() == null) {
             this.retrieveUserFromNetworkInBackground();
         }
     }
@@ -82,10 +74,10 @@ public class UserViewModel extends AndroidViewModel {
     /**
      * Retrieve User from REST API in background.
      */
-    private void retrieveUserFromNetworkInBackground(){
+    private void retrieveUserFromNetworkInBackground() {
 
         // Run in background
-        EXECUTOR.execute(() ->{
+        EXECUTOR.execute(() -> {
 
             // Get the User from repository.
             Optional<User> oUser = this.userRepository.retrieveUser("admin@ucn.cl", "admin123");
