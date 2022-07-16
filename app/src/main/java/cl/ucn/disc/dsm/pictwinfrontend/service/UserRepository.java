@@ -87,26 +87,26 @@ public final class UserRepository {
     public Optional<User> retrieveUser(final String email, final String password) {
 
         // The call.
-        Call<User> cUser = this.apiRest.retrieveUser(email, password);
+        Call<User> userCall = this.apiRest.retrieveUser(email, password);
 
         try {
             // The execution.
-            Response<User> rUser = cUser.execute();
+            Response<User> userResponse = userCall.execute();
 
             // Code in 2xx range.
-            if (rUser.isSuccessful()) {
+            if (userResponse.isSuccessful()) {
 
                 // Check for body.
-                if (rUser.body() == null) {
+                if (userResponse.body() == null) {
                     return Optional.empty();
                 }
 
                 // Return the User.
-                return Optional.of(rUser.body());
+                return Optional.of(userResponse.body());
             }
 
             // An unknown error.
-            throw new RuntimeException("Can't retrieve user", new HttpException(rUser));
+            throw new RuntimeException("Can't retrieve user", new HttpException(userResponse));
         } catch (IOException ex) {
             // IO error.
             throw new RuntimeException("Can't retrieve user", ex);
