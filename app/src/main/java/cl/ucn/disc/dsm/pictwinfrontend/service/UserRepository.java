@@ -51,7 +51,7 @@ public final class UserRepository {
      */
     public UserRepository() {
 
-        log("Building UserRepository with URL: {}", BASE_URL);
+        log.debug("Building UserRepository with URL: {}", BASE_URL);
 
         // Optional: the logger.
         HttpLoggingInterceptor theLogging = new HttpLoggingInterceptor(log::debug);
