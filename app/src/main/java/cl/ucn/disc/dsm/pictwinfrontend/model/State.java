@@ -18,7 +18,7 @@
 package cl.ucn.disc.dsm.pictwinfrontend.model;
 
 /**
- * The State Enum,
+ * The State Enum.
  *
  * @author Cross.
  */
