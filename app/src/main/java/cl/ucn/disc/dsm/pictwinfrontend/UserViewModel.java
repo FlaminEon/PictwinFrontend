@@ -63,7 +63,7 @@ public class UserViewModel extends AndroidViewModel {
     /**
      * Return the LiveData of User.
      */
-    public void Update() {
+    public void update() {
 
         // Only load if there isn't any data
         if (this.userLiveData.getValue() == null) {
