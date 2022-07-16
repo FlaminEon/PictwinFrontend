@@ -21,15 +21,13 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import cl.ucn.disc.dsm.pictwinfrontend.model.Twin;
 import cl.ucn.disc.dsm.pictwinfrontend.model.User;
 
 /**
- * The adapter
+ * The adapter.
  *
  * @author Cross.
  */
@@ -43,7 +41,7 @@ public final class UserAdapter extends RecyclerView.Adapter<ViewHolder> {
     /**
      * The Constructor.
      */
-    public UserAdapter(){
+    public UserAdapter() {
         // Nothing
     }
 
@@ -67,7 +65,7 @@ public final class UserAdapter extends RecyclerView.Adapter<ViewHolder> {
      */
     @SuppressLint("DefaultLocale")
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position){
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // Retrieve the Twin at the specified position
         final Twin twin = this.user.getTwins().get(position);
 
@@ -77,9 +75,9 @@ public final class UserAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     /**
-     * Returns the total number of item in the data set held by the adapter
+     * Returns the total number of item in the data set held by the adapter.
      *
-     * @return the total number of items in this adapter
+     * @return the total number of items in this adapter.
      */
     @Override
     public int getItemCount() {
@@ -91,9 +89,9 @@ public final class UserAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     /**
-     * Set the user
+     * Set the user.
      */
-    public void setUser(@NonNull User user){
+    public void setUser(@NonNull User user) {
         this.user = user;
     }
 
