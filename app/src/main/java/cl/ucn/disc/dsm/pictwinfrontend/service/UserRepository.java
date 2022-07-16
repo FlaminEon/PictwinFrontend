@@ -41,7 +41,7 @@ public final class UserRepository {
     /**
      * The REST API.
      */
-    private final PicTwinAPIRest apiRest;
+    private final PicTwinRestApi apiRest;
 
     // Internal IP address.
     private static final String BASE_URL = "http://192.168.16.1:8080";
@@ -74,7 +74,7 @@ public final class UserRepository {
                 .build();
 
         // The REST API.
-        this.apiRest = retrofit.create(PicTwinAPIRest.class);
+        this.apiRest = retrofit.create(PicTwinRestApi.class);
     }
 
     /**

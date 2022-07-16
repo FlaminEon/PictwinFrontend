@@ -27,7 +27,7 @@ import retrofit2.http.Query;
  *
  * @author Cross.
  */
-public interface PicTwinAPIRest {
+public interface PicTwinRestApi {
 
     /**
      * Retrieve the user.
