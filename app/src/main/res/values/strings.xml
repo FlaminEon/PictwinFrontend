@@ -16,5 +16,6 @@
   -->
 
 <resources>
-    <string name="app_name">PictwinFrontend</string>
+    <string name="app_title">Pictwin</string>
+    <string name="app_subtitle">The picture sharing network</string>
 </resources>
