@@ -40,7 +40,7 @@
             app:contentInsetStart="0dp"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:subtitle="@string/app_subtitle"
-            app:title="@string/app_title">
+            app:title="@string/app_name">
 
         </com.google.android.material.appbar.MaterialToolbar>
 
