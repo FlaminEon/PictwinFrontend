@@ -23,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * The View Holder.
+ *
+ * @author Cross.
  */
 public class ViewHolder extends RecyclerView.ViewHolder {
     //TODO: change class to static.
