@@ -89,7 +89,7 @@ public class Pic {
      * The stored picture in Bytes.
      */
     @Getter
-    private Byte[] picture;
+    private byte[] picture;
 
     /**
      * The owner of the Pic.
