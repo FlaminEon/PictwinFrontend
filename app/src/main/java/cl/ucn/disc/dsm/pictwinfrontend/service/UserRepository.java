@@ -44,7 +44,7 @@ public final class UserRepository {
     private final PicTwinRestApi apiRest;
 
     // Internal IP address.
-    private static final String BASE_URL = "http://192.168.16.1:8080";
+    private static final String BASE_URL = "http://192.168.1.82:8080";
 
     /**
      * Constructor.
