@@ -13,4 +13,10 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <!-- Toolbar colors. -->
+    <style name="Theme.PictwinFrontend.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary_amber_600</item>
+        <item name="titleTextColor">@color/secondary_lightblue_dark</item>
+        <item name="subtitleTextColor">@color/secondary_lightblue_700</item>
+    </style>
 </resources>
