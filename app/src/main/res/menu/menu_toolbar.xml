@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright 2022 Tomas Venegas
   ~
@@ -15,8 +16,10 @@
   ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<resources>
-    <string name="app_name">Pictwin</string>
-    <string name="app_subtitle">The picture sharing network</string>
-    <string name="menu_theme">Menu</string>
-</resources>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_theme"
+        android:title="@string/menu_theme"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -39,6 +39,7 @@
             android:minWidth="?attr/actionBarSize"
             app:contentInsetStart="0dp"
             app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:menu="@menu/menu_toolbar"
             app:subtitle="@string/app_subtitle"
             app:title="@string/app_name">
 

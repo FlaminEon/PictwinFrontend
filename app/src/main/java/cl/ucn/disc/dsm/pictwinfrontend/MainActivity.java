@@ -20,9 +20,11 @@ package cl.ucn.disc.dsm.pictwinfrontend;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.appbar.MaterialToolbar;
 
 /**
  * The Main Activity.
@@ -58,6 +60,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the adapter to RecyclerView.
         recyclerView.setAdapter(adapter);
+
+        // Menu in MaterialToolbar.
+        // TODO: fix the toolbar.
+        // MaterialToolbar toolbar = findViewById(R.id.am_mt_toolbar);
+        // toolbar.setOnMenuItemClickListener(menuItem -&gt; {
+        //     // Click to change themes.
+        //     if (menuItem.getItemId() == R.id.menu_theme) {
+        //         // Check the current theme in use.
+        //         if (AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES) {
+        //             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        //         } else {
+        //             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        //         }
+        //
+        //     }
+        //
+        // }
 
         // Build the UserViewModel.
         this.userViewModel = ViewModelProvider
