@@ -32,7 +32,7 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/am_mt_toolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            style="@style/Theme.PictwinFrontend.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:elevation="4dp"
