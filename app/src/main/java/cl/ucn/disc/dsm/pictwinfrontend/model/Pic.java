@@ -45,7 +45,7 @@ public class Pic {
      */
     @Getter
     @Builder.Default
-    private ZonedDateTime timestamp = ZonedDateTime.now();
+    private String timestamp = String.valueOf(ZonedDateTime.now());
 
     /**
      * the amount of dislike a Pic has.
